@@ -1,0 +1,4 @@
+# this file contains global settings
+
+# raw data is expected in working_dir/data/raw
+working_dir: "/enter/your/working/directory"

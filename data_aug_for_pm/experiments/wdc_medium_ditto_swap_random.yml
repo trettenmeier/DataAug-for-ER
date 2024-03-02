@@ -1,0 +1,12 @@
+batch_size: 32
+dataset: wdc
+epochs: 30
+max_input_length: 256
+max_string_len: 1000
+model: ditto
+offline_augmentation:
+- swap_random
+online_augmentation: []
+path_to_test_set: data/raw/wdc_lspm/all_gs.json.gz
+path_to_train_set: data/raw/wdc_lspm/all_train/all_train_medium.json.gz
+path_to_val_set: data/raw/wdc_lspm/all_valid/all_valid_medium.csv

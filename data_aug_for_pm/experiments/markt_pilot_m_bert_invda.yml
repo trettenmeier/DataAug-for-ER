@@ -1,0 +1,12 @@
+batch_size: 32
+dataset: markt_pilot
+epochs: 30
+max_input_length: 128
+max_string_len: 1000
+model: bert
+offline_augmentation:
+- invda
+online_augmentation: []
+path_to_test_set: data/raw/markt_pilot_dataset/markt_pilot_dataset_test.parquet
+path_to_train_set: data/raw/markt_pilot_dataset/m_markt_pilot_dataset_train.parquet
+path_to_val_set: data/raw/markt_pilot_dataset/m_markt_pilot_dataset_val.parquet

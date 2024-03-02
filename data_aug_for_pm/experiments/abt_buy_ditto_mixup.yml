@@ -1,0 +1,12 @@
+batch_size: 32
+dataset: abt_buy
+epochs: 30
+max_input_length: 256
+max_string_len: 1000
+model: ditto
+offline_augmentation: []
+online_augmentation:
+- mixup
+path_to_test_set: data/raw/abt_buy/test.csv
+path_to_train_set: data/raw/abt_buy/train.csv
+path_to_val_set: data/raw/abt_buy/valid.csv

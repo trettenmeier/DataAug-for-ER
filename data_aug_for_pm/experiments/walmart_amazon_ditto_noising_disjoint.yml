@@ -1,0 +1,12 @@
+batch_size: 32
+dataset: walmart_amazon
+epochs: 30
+max_input_length: 256
+max_string_len: 1000
+model: ditto
+offline_augmentation:
+- noising_disjoint
+online_augmentation: []
+path_to_test_set: data/raw/walmart_amazon/test.csv
+path_to_train_set: data/raw/walmart_amazon/train.csv
+path_to_val_set: data/raw/walmart_amazon/valid.csv

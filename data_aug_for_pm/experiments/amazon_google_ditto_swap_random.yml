@@ -1,0 +1,12 @@
+batch_size: 32
+dataset: amazon_google
+epochs: 30
+max_input_length: 256
+max_string_len: 1000
+model: ditto
+offline_augmentation:
+- swap_random
+online_augmentation: []
+path_to_test_set: data/raw/amazon_google/test.csv
+path_to_train_set: data/raw/amazon_google/train.csv
+path_to_val_set: data/raw/amazon_google/valid.csv

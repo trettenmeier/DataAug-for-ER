@@ -40,7 +40,7 @@ class TrainDittoTask(LuigiBaseTask):
         elif self.experiment.dataset == "wdc":
             requirements["train_data"] = PreprocessWDCTrainDataTask(experiment_name=self.experiment_name)
             requirements["val_data"] = PreprocessWdcValTestDataTask(experiment_name=self.experiment_name)
-        elif self.experiment.dataset in ["abt_buy", "amazon_google", "walmart_amazon"]:
+        elif self.experiment.dataset in ["amazon_google", "walmart_amazon"]:
             requirements["train_data"] = PreprocessMagellanTrainDataTask(experiment_name=self.experiment_name)
             requirements["val_data"] = PreprocessMagellanValTestDataTask(experiment_name=self.experiment_name)
 

@@ -53,7 +53,7 @@ class RunExperimentTask(LuigiBaseTask):
         elif self.experiment.dataset == "wdc":
             requirements["train_data"] = PreprocessWDCTrainDataTask(experiment_name=self.experiment_name)
             requirements["val_data"] = PreprocessWdcValTestDataTask(experiment_name=self.experiment_name)
-        elif self.experiment.dataset in ["abt_buy", "amazon_google", "walmart_amazon"]:
+        elif self.experiment.dataset in ["amazon_google", "walmart_amazon"]:
             requirements["train_data"] = PreprocessMagellanTrainDataTask(experiment_name=self.experiment_name)
             requirements["val_data"] = PreprocessMagellanValTestDataTask(experiment_name=self.experiment_name)
 
@@ -123,7 +123,7 @@ class RunExperimentTask(LuigiBaseTask):
             else:
                 loader_factory = WdcNonBertLoader(df_train, df_val, df_test, self.experiment)
 
-        elif self.experiment.dataset in ["abt_buy", "amazon_google", "walmart_amazon"]:
+        elif self.experiment.dataset in ["amazon_google", "walmart_amazon"]:
             if self.experiment.model == "bert":
                 loader_factory = MagellanBertLoader(df_train, df_val, df_test, self.experiment)
             else:

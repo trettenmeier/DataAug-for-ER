@@ -14,12 +14,6 @@ class Dataset:
 
 DATASETS = [
     Dataset(
-        name="abt_buy",
-        path_to_train_set="data/raw/abt_buy/train.csv",
-        path_to_val_set="data/raw/abt_buy/valid.csv",
-        path_to_test_set="data/raw/abt_buy/test.csv",
-    ),
-    Dataset(
         name="amazon_google",
         path_to_train_set="data/raw/amazon_google/train.csv",
         path_to_val_set="data/raw/amazon_google/valid.csv",

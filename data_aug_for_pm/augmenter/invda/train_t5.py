@@ -235,20 +235,7 @@ def get_dataset(tokenizer, type_path, args, experiment_configuration: Experiment
 
 
 def preprocess_data(data_dir: str, type_path: str, experiment_configuration: ExperimentConfiguration) -> pd.DataFrame:
-    if "abt_buy" in experiment_configuration.dataset:
-        from data_aug_for_pm.utils.magellan import abt_buy_to_dataframe
-
-        if "train" in type_path:
-            df = abt_buy_to_dataframe(os.path.join(data_dir, experiment_configuration.path_to_train_set))
-        else:
-            df = abt_buy_to_dataframe(os.path.join(data_dir, experiment_configuration.path_to_val_set))
-
-        cols = df.columns
-        cols_a = [i for i in cols if "left" in i]
-        cols_b = [i for i in cols if "right" in i]
-
-        return create_df(df, cols_a, cols_b)
-    elif "amazon_google" in experiment_configuration.dataset:
+    if "amazon_google" in experiment_configuration.dataset:
         from data_aug_for_pm.utils.magellan import amazon_google_to_dataframe
 
         if "train" in type_path:

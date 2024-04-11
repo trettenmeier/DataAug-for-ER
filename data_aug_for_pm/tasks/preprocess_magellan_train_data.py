@@ -5,7 +5,7 @@ import hashlib
 from data_aug_for_pm.tasks.base import LuigiBaseTask
 from data_aug_for_pm.utils.load_config import load_global_config, load_config
 from data_aug_for_pm.utils.ditto import write_magellan_data_in_ditto_format
-from data_aug_for_pm.utils.magellan import abt_buy_to_dataframe, amazon_google_to_dataframe, walmart_amazon_to_dataframe
+from data_aug_for_pm.utils.magellan import amazon_google_to_dataframe, walmart_amazon_to_dataframe
 from data_aug_for_pm.augmenter.offline_augmentation import apply_offline_augmentation
 
 
@@ -27,9 +27,7 @@ class PreprocessMagellanTrainDataTask(LuigiBaseTask):
         self.output_path = os.path.join(self.global_config.working_dir, "data", "intermediate", self.experiment.dataset)
 
     def run(self) -> None:
-        if self.experiment.dataset == "abt_buy":
-            df_train = abt_buy_to_dataframe(os.path.join(self.global_config.working_dir, self.experiment.path_to_train_set))
-        elif self.experiment.dataset == "amazon_google":
+        if self.experiment.dataset == "amazon_google":
             df_train = amazon_google_to_dataframe(os.path.join(self.global_config.working_dir, self.experiment.path_to_train_set))
         elif self.experiment.dataset == "walmart_amazon":
             df_train = walmart_amazon_to_dataframe(

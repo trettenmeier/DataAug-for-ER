@@ -4,7 +4,7 @@ import hashlib
 
 from data_aug_for_pm.tasks.base import LuigiBaseTask
 from data_aug_for_pm.utils.load_config import load_global_config, load_config
-from data_aug_for_pm.utils.magellan import abt_buy_to_dataframe, amazon_google_to_dataframe, walmart_amazon_to_dataframe
+from data_aug_for_pm.utils.magellan import amazon_google_to_dataframe, walmart_amazon_to_dataframe
 from data_aug_for_pm.utils.ditto import write_magellan_data_in_ditto_format
 
 
@@ -26,10 +26,7 @@ class PreprocessMagellanValTestDataTask(LuigiBaseTask):
         self.output_path = os.path.join(self.global_config.working_dir, "data", "intermediate", self.experiment.dataset)
 
     def run(self) -> None:
-        if self.experiment.dataset == "abt_buy":
-            df_val = abt_buy_to_dataframe(os.path.join(self.global_config.working_dir, self.experiment.path_to_val_set))
-            df_test = abt_buy_to_dataframe(os.path.join(self.global_config.working_dir, self.experiment.path_to_test_set))
-        elif self.experiment.dataset == "amazon_google":
+        if self.experiment.dataset == "amazon_google":
             df_val = amazon_google_to_dataframe(os.path.join(self.global_config.working_dir, self.experiment.path_to_val_set))
             df_test = amazon_google_to_dataframe(os.path.join(self.global_config.working_dir, self.experiment.path_to_test_set))
         elif self.experiment.dataset == "walmart_amazon":
